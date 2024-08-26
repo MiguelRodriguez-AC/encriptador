@@ -3,6 +3,7 @@ function encriptar() {
   let tituloMensaje = document.getElementById("titulo-mensaje");
   let parrafo = document.getElementById("parrafo");
   let muneco = document.getElementById("muneco");
+ 
 
   let textoCifrado = texto
     .replace(/e/gi, "enter")
@@ -20,7 +21,7 @@ function encriptar() {
     muneco.src = "./imagenes/imagen1.png";
     tituloMensaje.textContent = "Ningún mensaje fue encontrado";
     parrafo.textContent = "Ingresa el texto que deseas encriptar o desencriptar";
-    alert("Debes ingresar algún texto");
+    swal("Ooops!", "Debes ingresar un texto", "warning");
   }
 }
 
@@ -46,6 +47,11 @@ function desencriptar() {
     muneco.src = "./imagenes/imagen1.png";
     tituloMensaje.textContent = "Ningún mensaje fue encontrado";
     parrafo.textContent = "Ingresa el texto que deseas encriptar o desencriptar";
-    alert("Debes ingresar algún texto");
+    swal("Ooops!", "Debes ingresar un texto", "warning");
   }
+}
+
+function copiar () {
+  const textoCopiado = texto.value;
+  navigator.clipboard.writeText(textoCopiado);
 }
